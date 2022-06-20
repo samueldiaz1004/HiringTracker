@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiring Tracker Index</title>
+    <link rel="shortcut icon" href="/_images/logo-recortado.png"/>
+    <link rel="stylesheet" href="/_css/index_styles.css">
+    <link rel="stylesheet" href="/_css/overlay.css">
+    <link rel="stylesheet" href="/_css/nav_styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
+    <!--    Fonts source    -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!--    Icons source    -->
+    <script src="https://kit.fontawesome.com/fc5f14dc16.js" crossorigin="anonymous"></script>
+</head>
+<body class="index">
+<!--    Navigation Bar  -->
+    <nav>
+        <div class="left-side">
+            <a href="/index.html" class="top" title="Amdocs Logo"><img src="/_images/logo-white.png"></a>
+            <p class="app-tittle block">Hiring Tracker</p>
+        </div>
+        <div class="middle-side">
+            <a href="/admin_page.html" title="User Management" class="btn" id="user-man-btn">User Management</a>
+            <a href="/index.html" style="color: inherit;"><i class="far fa-bell"><button id="hide-notif"></button></i></a>
+            <i class="fas fa-circle" id="notifications-bubble"></i>
+            <p id="notifications-number">0</p>
+            <img src="/_images/user-icon.png" class="user-icon" title="User Icon" width="50" height="50">
+            
+        </div>
+        <div class="right-side">
+            <div class="user-info">
+                <p id="user-name">Jose Luis Hernández</p>
+                <p id="user-type">Admin</p>
+            </div>
+            <a id="logout-btn" title="Log Out" class="btn">Log Out</a>
+        </div>
+    </nav>
+
+    <div id ="overlay"></div>
+    <div class="modal" id="modal">
+        <ul>
+            <i id="close-modal-icon" class="fas fa-times-circle close-modal-icon"></i>
+            <li>Type:
+                <div class="list type-list">
+                    <span>
+                        <input type="radio" id="Ext" name="Type" value="Ext" checked>
+                        <label for="Ext">Ext</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="IM" name="Type" value="IM">
+                        <label for="IM">IM</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="Exp" name="Type" value="Exp">
+                        <label for="Exp">Exp</label>
+                    </span>
+                </div>
+            </li>
+            <li>PI:<input id="PI"></li>
+            <li>Req:<input id="Req"></li>
+            <li>OL3:<input id="OL3"></li>
+            <li>Pcenter:<input id="Pcenter"></li>
+            <li>Name(s):<input id="Name" size="30px" style="text-transform: capitalize"></li>
+            <li>Last Name(s):<input id="Last Name" size="30px" style="text-transform: capitalize"></li>
+            <li>Role:<input id="Role"></li>
+            <li>Mgr:<input id="Mgr" style="text-transform: capitalize"></li>
+            <li>Partner:<input id="Partner"></li>
+            <li>Wcm Bd:<input id="WcmBd"></li>
+            <li>Site:
+                <div class="list site-list">
+                    <span>
+                        <input type="radio" id="GDL" name="Site" value="GDL" checked>
+                        <label for="GDL">GDL</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="CDMX" name="Site" value="CDMX">
+                        <label for="CDMX">CDMX</label>
+                    </span>
+                </div>
+            </li>
+            <li>FWD:<input id="FWD" type="date"></li>
+            <li>Tentative:<input id="Tentative" type="date"></li>
+            <li>Inv:      
+                <div class="list inv-list">
+                    <span>
+                        <input type="radio" id="Y" name="Inv" value="Y">
+                        <label for="Y">Y</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="N" name="Inv" value="N" checked>
+                        <label for="N">N</label>
+                    </span>
+                </div>
+            </li>
+            <input id="register" class="submit" type="submit" value="Register">
+        </ul>
+    </div>
+    <main>
+				
+<!--				Confirmation Modal				-->
+		<div class="modal" id="confirmation-modal">
+        <ul class="size-fixer">
+            <i id="close-confirmation-icon" class="fas fa-times-circle close-modal-icon"></i>
+            <li><p>Are you sure you want to proceed?</p></li>
+            <input id="confirm" class="submit" type="submit" value="Confirm">
+        </ul>
+    </div>
+    <div id="confirmation-overlay"></div>
+<!--        Candidate Table        -->
+				<h1>Candidate Overview</h1>
+        <div class="search-filter">
+            <input id="searchBar" type="text" placeholder="Search" class="search-bar">
+            <label for="filter">Filter:</label>
+            <select id="filter">
+                <option value="Deadline">Deadline</option>
+                <option value="Req">Req</option>
+                <option value="Started">Started</option>
+                <option value="CurrentStage">Current Stage</option>
+                <option value="Name">Name</option>
+            </select>
+            <div id="sort-filter">
+                <label for="sort">Sort:</label>
+                <select id="sort">
+                    <option value="Deadline">Deadline</option>
+                    <option value="Req">Req</option>
+                    <option value="Started">Started</option>
+                    <option value="CurrentStage">Current Stage</option>
+                    <option value="Name">Name</option>
+                </select>
+            </div>
+            <button id="open-modal" type="button" class="btn">Add Candidate</button>
+        </div>
+        <table class="content-table">
+           <thead>
+          <tr>
+            <td>Req</td>
+            <td>Full Name</td>
+            <td>Started</td>
+            <td>Deadline</td>
+            <td>Status</td>
+            <td>Current Stage</td>
+          </tr>
+          </thead>
+          <tbody class="tableBody"></tbody>
+        </table>
+        <div class="setting">
+            <p class="setting-table">Page: &nbsp<input type="text" value="1" name="num" class="number-page"></p>
+            <p class="setting-table">Rows: &nbsp<input type="text" value="20" name="row"class="number-row"></p>
+            <!-- <button class="btn" type="button" >Update</button> -->
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>2021 &copy;Amdocs</p>
+    </footer>
+
+</body>
+<script src="/_js/saveCandidate.js" async></script>
+<script src="/_js/notifications.js" async></script>
+<script src="/_js/checkUserType.js" async></script>
+<script src="/_js/indexTable.js" async></script>

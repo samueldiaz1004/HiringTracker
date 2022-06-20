@@ -1,0 +1,247 @@
+/* Color Palette
+#333147 - Background
+white - Text
+#D5665F - Button Background
+
+
+
+/*Navigation
+--------------------------------------------------*/
+
+
+nav {
+    overflow: auto;
+    margin: 20px 0 0;
+    min-width: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+    position: relative;
+    color: white;
+
+}
+
+nav > div {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    font-size: 16px;
+}
+
+nav p {
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.top {
+    width: 60%;
+    min-width: 35%;
+    height: 70px;
+}
+
+.left-side {
+    margin: 0;
+    min-width: 30%;
+    text-align: left;
+}
+
+.left-side img {
+    object-fit: cover;
+    min-width: 85%;
+    max-width: 100%;
+    max-height: 85px;
+    min-height: 85px;
+
+}
+
+.left-side p {
+    padding: 0;
+    margin: 0;
+    width: 84%;
+    text-align: right;
+    font-size: 22px;
+}
+
+.middle-side {
+    width: 40%;
+    text-align: right;
+    position: relative;
+    top: -30px;
+    bottom: 0;
+}
+
+.middle-side .btn {
+    position: relative;
+    top: -11px;
+    margin-right: 40px;
+}
+
+.user-icon {
+    max-width: 15%;
+    margin-left: 45px
+}
+
+.right-side {
+    margin: 0;
+    width: 20%;
+    padding-left: 10px;
+    text-align: left;
+    position: relative;
+    top: -10px;
+}
+
+.right-side p {
+    margin: 2px 20px;
+    
+}
+
+nav .btn {
+    background: #D5665F;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    margin: 2px 15px;
+    padding: 2px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav .btn:hover {
+    background-color: #E8927C;
+}
+
+nav .btn:active {
+     background-color: #D5665F;
+}
+
+#user-man-btn {
+	display: none;
+}
+
+/*Notifications
+--------------------------------------------------*/
+.hide-notif {
+    display: none;
+}
+
+#notifications-bubble {
+    color: #EAB330;
+    font-size: 30px;
+    position: absolute;
+    right: 120px;
+}
+
+#notifications-number {
+    font-size: 20px; 
+    font-weight: 600;
+    position: absolute;
+    right: 130px;
+    top: 2px;
+}
+
+.notifications-bell {
+    margin-left: 30px;
+}
+
+nav i {
+    font-size: 45px;
+}
+
+.display-notifications {
+    transform: scale(0);
+    transition: 50ms ease-in;
+    position: absolute;
+    right: 20%;
+    top: 85px;
+    max-height: 500px;
+    width: 13%;
+    height: auto;
+    overflow: auto;
+    box-sizing: border-box;
+    background-color: inherit;
+    border: solid 3px white;
+    border-radius: 5px;
+    z-index: 98;
+}
+
+.display-notifications ul {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.display-notifications li {
+    background-color: #6E7CA0;
+    font-weight: 600;
+    color: white;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: solid 0.5px white;
+}
+
+.display-notifications .close-to-deadline{
+    background-color: #B3B0C4;
+    color: #333147;
+    font-weight: 400;
+}
+
+.display-notifications .close-to-deadline p:last-child{
+    margin-left: 25px;
+}
+
+.display-notifications p {
+    display: inline-block;
+    margin: 5px 15px;
+    padding: 0;
+    text-align: center;
+}
+
+#hide-notif {
+    position: absolute;
+    background-color: transparent;
+    right: 13%;
+    width: 14%;
+    top: 5%;
+    height: 60px;
+    border: 0;
+    outline: none;
+}
+
+#hide-notif:hover {
+    cursor: pointer;
+}
+
+/*Scrollbar
+------------------------------------*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #C8C9C7; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6E7CA0; 
+}

@@ -1,0 +1,29 @@
+{
+  "name": "gda.tc2005b.1.2111.11758_hiring3",
+  "version": "1.0.0",
+  "description": "-----------------------------------------------",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tecnologico-de-monterrey-oficial/GDA.TC2005B.1.2111.11758_Hiring3.git"
+  },
+  "author": "Hiring Team 3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tecnologico-de-monterrey-oficial/GDA.TC2005B.1.2111.11758_Hiring3/issues"
+  },
+  "homepage": "https://github.com/tecnologico-de-monterrey-oficial/GDA.TC2005B.1.2111.11758_Hiring3#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}

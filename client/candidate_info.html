@@ -1,0 +1,384 @@
+<!-- Pagina 3 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Information</title>
+    <link rel="shortcut icon" href="/_images/logo-recortado.png"/>
+    <link rel="stylesheet" href="/_css/candidate_info.css">
+    <link rel="stylesheet" href="/_css/overlay.css">
+    <link rel="stylesheet" href="/_css/nav_styles.css">
+    <!--    Fonts source    -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!--    Icons source    -->
+    <script src="https://kit.fontawesome.com/fc5f14dc16.js" crossorigin="anonymous"></script>
+    <!--    Carrousel    -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="left-side">
+            <a href="/index.html" class="top" title="Amdocs Logo"><img src="/_images/logo-white.png"></a>
+            <p class="app-tittle block">Hiring Tracker</p>
+        </div>
+        <div class="middle-side">
+            <a href="/admin_page.html" title="User Management" class="btn" id="user-man-btn">User Management</a>
+            <a href="/index.html" style="color: inherit;"><i class="far fa-bell"><button id="hide-notif"></button></i></a>
+            <i class="fas fa-circle" id="notifications-bubble"></i>
+            <p id="notifications-number">0</p>
+            <img src="/_images/user-icon.png" class="user-icon" title="User Icon" width="50" height="50">
+
+        </div>
+        <div class="right-side">
+            <div class="user-info">
+                <p id="user-name">Jose Luis Hernández</p>
+                <p id="user-type">Admin</p>
+            </div>
+            <a id='logout-btn' title="Log Out" class="btn">Log Out</a>
+        </div>
+    </nav>
+
+    <div id ="overlay"></div>
+    <div class="modal" id="modal">
+        <ul>
+            <i id="close-modal-icon" class="fas fa-times-circle close-modal-icon"></i>
+            <input id="eliminateBtn"  class="submit" type="submit" value="Eliminate Candidate">
+            <li>Type:
+                <div class="list type-list disabled-radio">
+                    <span>
+                        <input disabled type="radio" id="Ext" name="Type" value="Ext">
+                        <label for="Ext">Ext</label>
+                    </span>
+                    <span>
+                        <input disabled type="radio" id="IM" name="Type" value="IM">
+                        <label for="IM">IM</label>
+                    </span>
+                    <span>
+                        <input disabled type="radio" id="Exp" name="Type" value="Exp">
+                        <label for="Exp">Exp</label>
+                    </span>
+                </div>
+            </li>
+            <li>PI:<input disabled name="PI"></li>
+            <li>Req:<input disabled name="Req"></li>
+            <li>OL3:<input disabled name="OL3"></li>
+            <li>Pcenter:<input disabled name="Pcenter"></li>
+            <li>Name(s):<input disabled name="Name" style="text-transform: capitalize"></li>
+            <li>Last Name(s):<input disabled name="Last Name" size="30px" style="text-transform: capitalize"></li>
+            <li>Role:<input disabled name="Role"></li>
+            <li>Mgr:<input disabled name="Mgr" style="text-transform: capitalize"></li>
+            <li>Partner:<input disabled name="Partner"></li>
+            <li>ID#<input disabled name="ID"></li>
+            <li>Wcm Bd:<input disabled name="WcmBd"></li>
+            <li>Site:
+                <div class="list site-list disabled-radio">
+                    <span>
+                        <input disabled type="radio" id="GDL" name="Site" value="GDL">
+                        <label for="GDL">GDL</label>
+                    </span>
+                    <span>
+                        <input disabled type="radio" id="CDMX" name="Site" value="CDMX">
+                        <label for="CDMX">CDMX</label>
+                    </span>
+                </div>
+            </li>
+            <li>FWD:<input disabled id="FWD" name="FWD" type="date"></li>
+            <li>Tentative:<input disabled name="Tentative" type="date"></li>
+            <li>Inv:
+                <div class="list inv-list disabled-radio">
+                    <span>
+                        <input disabled type="radio" id="Y" name="Inv" value="Y">
+                        <label for="Y">Y</label>
+                    </span>
+                    <span>
+                        <input disabled type="radio" id="N" name="Inv" value="N">
+                        <label for="N">N</label>
+                    </span>
+                </div>
+            </li>
+            <input id="modify"  class="submit" type="submit" value="Modify">
+            <input id="register" class="submit" type="submit" value="Register">
+        </ul>
+    </div>
+		
+<!--				Confirmation Modal				-->
+		<div class="modal" id="confirmation-modal">
+        <ul class="size-fixer">
+            <i id="close-confirmation-icon" class="fas fa-times-circle close-modal-icon"></i>
+            <li><p>Are you sure you want to proceed?</p></li>
+            <input id="confirm" class="submit" type="submit" value="Confirm">
+        </ul>
+    </div>
+    <div id="confirmation-overlay"></div>
+    
+<!--			Candidate Information			-->
+    <main>
+        <h1><strong>Candidate Information</strong></h1>
+        <div class="general">
+            <div id= "open-modal" class="info">
+                <i class="fas fa-address-book" style='font-size:500%' float='left'></i>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+            <div class="clock">
+                <h2>Time to complete process</h2>
+                <p class=""><strong>00:00:00</strong></p>
+            </div>
+        </div>
+        <div class="process">
+            <div class="carousel owl-carousel">
+                <div class="current status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>03/05/2020</strong></p>
+                        <p>Deadline: <br><strong>03/07/2020</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Offer Requested" class="button">Offer Requested</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Offer Completed" class="button">Offer Completed</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Offer Sent to TAP" class="button">Offer Sent to TAP</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Offer Sent to Candidate" class="button">Offer Sent to Candidate</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Offer Sent Back" class="button">Offer Sent Back</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Final Test Start" class="button">Final Test Start</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Final Test Follow Up" class="button">Final Test Follow Up</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Final Test Sent to TAP" class="button">Final Test Sent to TAP</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Request EA" class="button">Request EA</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Create EA" class="button">Create EA</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Send EA" class="button">Send EA</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Send OnB" class="button">Send OnB</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Signature FU" class="button">Signature FU</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="OnB FU" class="button">OnB FU</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Review Documents" class="button">Review Documents</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Doc FU" class="button">Doc FU</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Load File" class="button">Load File</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Hire" class="button">Hire</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Assets" class="button">Assets</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Assets FU" class="button">Assets FU</a>
+                </div>
+                <div class="not_started status">
+                    <label class="container">
+                        <input type="checkbox"><span class="checkmark"></span>
+                    </label>
+                    <div class="summary">
+                        <p>Start Date: <br><strong>N/A</strong></p>
+                        <p>Deadline: <br><strong>N/A</strong></p>
+                        <p>User: <strong>N/A</strong></p>
+                    </div>
+                    <a title="Confirm Joining" class="button">Confirm Joining</a>
+                </div>
+            </div>
+        </div>
+        <div class="percentage">
+            <h4>5 / 21 procesos completados</h4>
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="candidate-footer">
+        <p>&copy; 2021 Amdocs</p>
+    </footer>
+</body>
+</html>
+<script src="/_js/cardUpdate.js" async></script>
+<script src="/_js/checkUserType.js" async></script>
+<script src="_js/fillCandidateInfo.js" async></script>

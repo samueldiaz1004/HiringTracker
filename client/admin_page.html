@@ -1,0 +1,156 @@
+<!-- Pagina 4 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/_css/admin_styles.css">
+    <link rel="stylesheet" href="/_css/overlay.css">
+    <link rel="stylesheet" href="/_css/nav_styles.css">
+    <title>User Management</title>
+    <link rel="shortcut icon" href="/_images/logo-recortado.png"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--    Fonts source    -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!--    Icons source    -->
+    <script src="https://kit.fontawesome.com/fc5f14dc16.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="left-side">
+            <a href="/index.html" class="top" title="Amdocs Logo"><img src="/_images/logo-white.png"></a>
+            <p class="app-tittle block">Hiring Tracker</p>
+        </div>
+        <div class="middle-side">
+            <a href="/admin_page.html" title="User Management" class="btn" id="user-man-btn">User Management</a>
+            <a href="/index.html" style="color: inherit;"><i class="far fa-bell"><button id="hide-notif"></button></i></a>
+            <i class="fas fa-circle" id="notifications-bubble"></i>
+            <p id="notifications-number">0</p>
+            <img src="/_images/user-icon.png" class="user-icon" title="User Icon" width="50" height="50">
+
+        </div>
+        <div class="right-side">
+            <div class="user-info">
+                <p id="user-name">Jose Luis Hernández</p>
+                <p id="user-type">Admin</p>
+            </div>
+            <a id="logout-btn" title="Log Out" class="btn">Log Out</a>
+        </div>
+    </nav>
+
+<!--    Overlay Window      -->
+    <div id ="overlay"></div>
+    <!-- <div class="overlay-window"> -->
+    <div class="modal" id="modal">
+        <ul class="size-fixer">
+            <i id="close-modal-icon" class="fas fa-times-circle close-modal-icon"></i>
+            <li class="li-fixer">Email:<input name="Email"></li>
+            <li>Password:<input type="password" name="Password" style="text-transform: capitalize"></li>
+            <li>Name:<input name="Name" style="text-transform: capitalize"></li>
+            <li>Last Name:<input name="LastName" style="text-transform: capitalize"></li>
+            <li>User Type:
+                <br>
+                <div class="list user-list">
+                    <span>
+                        <input type="radio" id="general" name="Type" value="General User" checked>
+                        <label for="general">General User</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="consultant" name="Type" value="Consultant">
+                        <label for="consultant">Consultant</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="admin" name="Type" value="Admin">
+                        <label for="admin">Admin</label>
+                    </span>
+                </div>
+            </li>
+            <li>Department:<input name="Department"></li>
+            <input id="register" class="submit" type="submit" value="Add new user">
+            <input id="save" class="submit" type="submit" value="Update user">
+        </ul>
+    </div>
+		
+<!--				Confirmation Modal				-->
+
+	<div class="modal" id="confirmation-modal">
+        <ul class="size-fixer">
+            <i id="close-confirmation-icon" class="fas fa-times-circle close-modal-icon"></i>
+            <li><p>Are you sure you want to proceed?</p></li>
+            <input id="confirm" class="submit" type="submit" value="Confirm">
+        </ul>
+    </div> 
+    <div id="confirmation-overlay"></div>
+
+<!--            Non Business Day Overlay                 -->
+
+    <div class="modal" id="holiday-modal">
+        <ul class="size-fixer">
+            <i id="close-holiday-icon" class="fas fa-times-circle close-modal-icon"></i>
+            <p>Non-Business Day: &nbsp<input name="Day" type="date" id="datepicker" class="input-date"></p>
+            <p>Reason: &nbsp<input name="Reason" maxlength="20" type="text" class="input-date"></p>
+            <input id="add-day" class="addDay" type="submit" value="Add">
+            <table class="tableHoliday">
+                <thead>
+                    <tr>
+                        <th>Reason</th>
+                        <th>Non-Business Day</th>
+                    </tr>
+                </thead>
+                <tbody class="tableBodyHoliday">
+                </tbody>
+            </table>
+            <input id="save-holiday" class="submit" type="submit" value="Save">
+        </ul>
+    </div>  
+    <div id="holiday-overlay"></div>
+
+<!--    Users Table     -->
+    <header>
+        <h1>User Management</h1>
+    </header>
+    <main>
+        <div class="interactive-content">
+            <div class="search-side">
+            <div><input id="searchBar" type="text" placeholder="Search" class="search-bar"></div>
+            <div>
+            <label for="filter">Filter:</label>
+            <select id="filter">
+                <option value="Email">Email</option>
+                <option value="Name">Name</option>
+                <option value="TypeOfUser">Type of User</option>
+                <option value="Status">Status</option>
+                <option value="Department">Department</option>
+            </select>
+            </div>
+            </div>
+            <div class="mod-btns">
+            <button id="update" type="button" class="btn">Modify</button>
+            <button id="remove" type="button" class="btn">Remove</button>
+            <button id="add" type="button" class="btn">Add</button>
+            <button id="nonBusiness" type="button" class="btn-extra">Add Non-Business Days</button>
+            </div>
+        </div>
+
+        <table class="content-table">
+          <thead>
+          <tr>
+            <td>Email</td>
+            <td>Name</td>
+            <td>Type of User</td>
+            <td>Status</td>
+            <td>Department</td>
+          </tr>
+          </thead>
+          <tbody class="tableBody"></tbody>
+        </table>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>2021 &copy;Amdocs</p>
+    </footer>
+</body>
+</html>
+<script src="/_js/notifications.js" async></script>
+<script src="/_js/adminOverlay.js" async></script>
+<script src="/_js/checkUserType.js" async></script>

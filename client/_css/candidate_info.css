@@ -1,0 +1,339 @@
+/*Global Styles
+--------------------------------------------------*/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color: white;
+    background-color: #333147;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    min-width: 1200px;
+}
+
+.login {
+    overflow: hidden;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    font-family: "Montserrat";
+    color: #E3E5E3;
+    position: role;
+    box-sizing: border-box;
+    top: 1%;
+    right: 0%;
+    margin: 2% 0;
+    width: 100%;
+}
+
+/*Headers
+--------------------------------------------------*/
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0%;
+    margin-bottom: 1%;
+}
+
+/*Content
+--------------------------------------------------*/
+.general {
+    padding: 1% 5% 2% 5%;
+    width: 100%;
+    overflow: auto;
+}
+
+.info {
+    margin: 0 5%;
+    border-radius: 20px;
+    background-color: rgb(224, 224, 224);
+    color: #333147;
+    width: 45%;
+    padding: 1% 2%;
+    float: left;
+    padding-bottom: 0%;
+}
+
+.info i {
+    float:left;
+    margin: 2% 5% 5% 0%;
+}
+
+
+.info p {
+    margin: 1%;
+}
+
+.clock {
+    color: white;
+    width: 40%;
+    text-align: center;
+    float: left;
+}
+
+.clock p {
+    margin: 5px auto;
+		padding: 0;
+    font-size: 450%;
+		border-radius: 5px;
+}
+
+.overtime {
+		background-color: #D5665F;
+    margin: 5px 0;
+		width: 450px;
+		padding: 0;
+    font-size: 450%;
+		border-radius: 5px;
+}
+
+.clock h2 {
+    margin: 0%;
+}
+
+.process {
+    overflow: auto;
+    padding: 0% 0%;
+}
+
+.completed {
+    background-color: #B3B0C4;
+}
+
+.current {
+    background-color: #EAB330;
+}
+
+.not_started {
+    background-color: #E3E5E3;
+}
+
+.summary {
+    height: 63%;
+    margin: 0%;
+}
+
+.percentage {
+    width: 100%;
+    padding-bottom: 0%;
+}
+
+.percentage h4 {
+    text-align: center;
+    font-family: "Montserrat";
+    color: white;
+    margin-bottom: 0%;
+    margin-top: 1%;
+}
+
+#myProgress {
+    width: 80%;
+    background-color: #ddd;
+    margin: 1% 10%;
+    border-radius: 15px;
+}
+
+#myBar {
+    width: 24%;
+    height: 20px;
+    background-color: #EAB330;
+    border-radius: 15px;
+}
+
+.button {
+    background: #333147;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    margin: 10px 0 0 0;
+    padding: 2%;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 95%;
+}
+
+.button:hover {
+    opacity: 60%;
+}
+
+.button:active {
+    opacity: 50%;
+}
+
+#eliminateBtn {
+    margin: 0;
+    position: relative;
+    left: -20%;
+}
+
+/*Checkmark
+--------------------------------------------------*/
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-right: 25px;
+    margin-bottom: 40px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 1px solid #333147;
+    border-radius: 50px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #333147;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    right: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#open-modal:hover {
+	cursor: pointer;
+	opacity: 90%;
+}
+
+#open-modal:active {
+	opacity: 80%;
+}
+
+/* Comment Modal Section */
+#comment {
+	font: inherit;
+	text-decoration: none;
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	height: 150px;
+}
+
+#comment-modal p {
+	margin-top: 30px;
+	font-weight: 600;
+}
+
+/* Carousel */
+.carousel{
+    max-width: 90%;
+    margin: auto;
+} 
+
+.status{
+    text-align: center;
+    border-radius: 5px;
+    height: 300px;
+    width: 90%;
+    padding: 2% 5%;
+    color: #333147;
+    margin: 0;
+} 
+
+.status p {
+    text-align: left;
+}
+
+/* Carousel Dots*/
+.owl-dots{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.owl-dot{
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    outline: none;
+    border-radius: 14px;
+    border: 2px solid white!important;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.owl-dot.active, .owl-dot:hover{
+    background: white!important;
+}
+
+/* Carousel arrow */
+.owl-nav .disabled{
+    display:none
+}
+
+.owl-prev,
+.owl-next{
+	top:125px;
+	margin-top:-20px;
+	position:absolute
+}
+
+.owl-prev{left:-4%}
+.owl-next{right:-3%}

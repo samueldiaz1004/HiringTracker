@@ -1,0 +1,287 @@
+/* Color Palette
+#B3B0C4 - Background
+#333147 - Text
+*/
+
+/*General
+------------------------------------*/
+.modal {
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    position: fixed;
+    color: #333147;
+    font-size: 16px;
+    margin: auto;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+}
+
+.modal.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+#overlay.confirm {
+    z-index: 100;
+    opacity: 1;
+}
+
+#overlay.active{
+	z-index: 99;
+    opacity: 0.8;
+    pointer-events: all;
+}
+
+.modal p {
+    display: inline-block;
+}
+
+.modal ul{
+    position: relative;
+    align-content: center;
+    border: 5px solid white;
+    background-color: #B3B0C4;
+    width: 420px;
+    margin: auto;
+    padding: 15px 0 5px 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.modal li {
+    list-style: none;
+    margin: 8px;
+    margin-left: 10px;
+    font-weight: 600;
+    text-align: left;
+    width: 380px;
+}
+
+.modal i+li {
+		margin-top: 30px;
+}
+
+.modal li > input {
+    background-color: inherit;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    font-weight: 400;
+    font-size: 18px;
+    position: absolute;
+    width: 235px;
+    right: 20px;
+}
+
+.input-date {
+    background-color: inherit;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    font-weight: 400px;
+    font-size: 18px;
+    width: 160px;
+    right: 50px;
+    color: #333147;
+}
+
+.submit {
+    position: relative;
+    right: 15px;
+    background: #D5665F;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    padding: 2px 25px;
+    margin: 20px 0px 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.submit:hover {
+    background-color: #E8927C;
+}
+
+.submit:active {
+     background-color: #D5665F;
+}
+
+.addDay {
+    position: relative;
+    right: 15px;
+    background: #D5665F;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    padding: 2px 25px;
+    margin: 20px 0px 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.addDay:hover {
+    background-color: #E8927C;
+}
+
+.addDay:active {
+     background-color: #D5665F;
+}
+
+.close-modal-icon {
+    position: absolute;
+		height: 30px;
+    width: 30px;
+    right: 10px;
+    top: 10px;
+    color: #D5665F;
+    font-size: 30px;
+}
+
+.close-modal-icon:hover {
+    color: #E8927C;
+		cursor: pointer
+}
+
+#confirmation-modal {
+	z-index: 101;
+}
+
+#confirmation-modal p {
+	position: relative;
+	top: 5px;
+	width: 100%;
+	text-align: center;
+}
+
+#holiday-modal {
+	z-index: 101;
+}
+
+#holiday-modal p {
+	position: relative;
+	top: 15px;
+	width: 100%;
+	text-align: center;
+}
+
+/*Index Page
+------------------------------------*/
+.list {
+    position: relative;
+    display: inline-block;
+    padding-top: 5px;
+}
+
+.list input{
+    margin: auto;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.list input:first-child {
+    margin-left: 10px;
+}
+
+.list label {
+    font-weight: 400;
+}
+
+.inv-list {
+    right: -70px;
+}
+
+.site-list {
+    right: -60px;
+}
+
+.type-list {
+    right: -50px;
+}
+
+/*Admin Page
+------------------------------------*/
+#close-modal-icon-admin {
+    position: absolute;
+    right: 1%;
+    top: 2%;
+    color: #D5665F;
+    font-size: 25px;
+}
+
+#close-modal-btn-admin {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: 2%;
+    right: 1%;
+    background-color: transparent;
+    border: 0;
+/*    outline: none;*/
+}
+
+#close-modal-btn-admin:hover {
+    cursor: pointer;
+    color: #E8927C;
+}
+
+
+.user-list {
+    right: -120px;
+}
+
+.user-list span {
+    display: block;
+}
+
+#confirmation-overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+#confirmation-overlay.active{
+    z-index: 100;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#holiday-overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+#holiday-overlay.active{
+    z-index: 100;
+    opacity: 1;
+    pointer-events: all;
+}
