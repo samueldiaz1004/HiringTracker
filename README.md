@@ -1,4 +1,4 @@
-# Hiring Tracker Equipo 3
+# Hiring Tracker
 
 ## Ciclo 1
 
@@ -62,3 +62,9 @@ NODE JS:
 - _**models:**_ Contiene los modelos de las tablas presentes en la base de datos.
 - _**node_modules:**_ Librerías y todos los paquetes necesarios para que el servidor pueda funcionar correctamente.
 - _**routes:**_ Archivos que redirigen los requests del cliente, y manda a llamar las funciones correspondientes dentro de controller.
+
+### Autores
+- [Leonardo Galindo](https://github.com/GSLeonardo)
+- [Samuel Diaz del Guante](https://github.com/samueldiaz1004)
+- [Roberto Lopez](https://github.com/RobTecGda)
+- [Ulises Venegas](https://github.com/Ulivego)
