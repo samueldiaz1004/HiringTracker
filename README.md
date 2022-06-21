@@ -1,8 +1,14 @@
 # Hiring Tracker
 
-## Ciclo 1
+Proyecto escolar en donde desarrollamos una aplicación web diseñada para asistir al personal de adquisición de talento en el proceso de reclutamiento en cada paso. Este proyecto se trabajó con Amdocs como el socio-formador.
 
------------------------------------------------
+## Colaboradores
+- [Leonardo Galindo](https://github.com/GSLeonardo)
+- [Samuel Diaz del Guante](https://github.com/samueldiaz1004)
+- [Roberto Lopez](https://github.com/RobTecGda)
+- [Ulises Venegas](https://github.com/Ulivego)
+
+## Ciclo 1
 
 HTML:
 - _**login:**_ Pantalla para ingresar al sistema.
@@ -21,11 +27,7 @@ CSS:
 - _**admin_styles:**_ Estilos para la pantalla del manejo de usuarios (_admin_page.html_).
 - _**nav_styles:**_ Estilos para la barra de navegación y las notificaciones.
 
-<br>
-
 ## Ciclo 2
-
------------------------------------------------
 
 CSS:
 - _**Overlay:**_ Estilos para el modal de confirmación, de editar datos y la cubierta de pantalla.
@@ -44,12 +46,7 @@ MISC:
 - _**server:**_ Script de prueba de un servidor.
 - _**package:**_ Archivo JSON que contiene la configuración de diferentes librerias descargadas de npm como "date-holidays" para reconocer dias de asueto.
 
-<br>
-
-
 ## Ciclo 3
-
------------------------------------------------
 
 CLIENT FOLDER:
 - Ajustes a los archivos HTML y Javascript, para poder realizar los requests al servidore Node JS
@@ -62,9 +59,3 @@ NODE JS:
 - _**models:**_ Contiene los modelos de las tablas presentes en la base de datos.
 - _**node_modules:**_ Librerías y todos los paquetes necesarios para que el servidor pueda funcionar correctamente.
 - _**routes:**_ Archivos que redirigen los requests del cliente, y manda a llamar las funciones correspondientes dentro de controller.
-
-### Autores
-- [Leonardo Galindo](https://github.com/GSLeonardo)
-- [Samuel Diaz del Guante](https://github.com/samueldiaz1004)
-- [Roberto Lopez](https://github.com/RobTecGda)
-- [Ulises Venegas](https://github.com/Ulivego)
